@@ -1,0 +1,46 @@
+body { 
+    max-width: 900px; margin: 30px auto; padding: 0 16px; font-family: Arial, sans-serif; background: #292929; color: #f1f1f1; 
+}
+
+nav {
+     margin: 16px 0; padding: 10px 0; border-bottom: 1px solid #555; 
+    }
+nav a, a { 
+    color: #8fc7ff; margin-right: 12px; 
+}
+
+a:hover { 
+    color: #c5e2ff; 
+}
+
+table { 
+    border-collapse: collapse; margin-top: 16px; width: 100%; background: #333; 
+}
+
+th, td {
+     border: 1px solid #555; padding: 8px; text-align: left; 
+}
+
+th { 
+    background: #3c3c3c; 
+}
+
+label { 
+    display: inline-block; margin-top: 10px; 
+}
+
+input, select { 
+    padding: 6px; min-width: 230px; background: #3a3a3a; color: #f1f1f1; border: 1px solid #666; 
+}
+
+input[type="checkbox"] {
+     accent-color: #6daee8; 
+    }
+
+button { 
+    padding: 6px 10px; cursor: pointer; color: #f1f1f1; background: #454545; border: 1px solid #777; 
+}
+
+button:hover { 
+    background: #555; 
+}

@@ -1,28 +1,15 @@
 package com.gabrielmoreno.biblioteca.model;
-
+import jakarta.persistence.*;
+@Entity
 public class Usuario {
-
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
     private String nome;
-    private Boolean emprestimo; //se já está com um livro emprestado ou não
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Boolean getEmprestimo() {
-        return emprestimo;
-    }
-
-    public void setEmprestimo(Boolean emprestimo) {
-        this.emprestimo = emprestimo;
-    }
-
-    public Usuario(String nome, Boolean emprestimo) {
-        this.nome = nome;
-        this.emprestimo = false;
-    }
+    private Boolean emprestimo = false;
+    public Usuario() {}
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public Boolean getEmprestimo() { return emprestimo; }
+    public void setEmprestimo(Boolean emprestimo) { this.emprestimo = emprestimo; }
 }

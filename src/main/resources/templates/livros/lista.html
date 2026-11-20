@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Livros</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <h1>Livros</h1>
+    <nav><a th:href="@{/livros}">Livros</a><a th:href="@{/autores}">Autores</a><a th:href="@{/categorias}">Categorias</a><a th:href="@{/usuarios}">Usuários</a><a th:href="@{/emprestimos}">Empréstimos</a></nav>
+
+    <p><a th:href="@{/livros/novo}">Cadastrar livro</a></p>
+
+    <p th:if="${#lists.isEmpty(livros)}">Nenhum livro cadastrado.</p>
+    <table th:unless="${#lists.isEmpty(livros)}" border="1" cellpadding="6">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="livro : ${livros}">
+                <td th:text="${livro.titulo}">Título</td>
+                <td th:text="${livro.autor}">Autor</td>
+                <td th:text="${livro.isbn}">ISBN</td>
+                <td>
+                    <a th:href="@{/livros/editar/{id}(id=${livro.id})}">Editar</a>
+                    <form th:action="@{/livros/excluir/{id}(id=${livro.id})}" method="post" style="display:inline">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

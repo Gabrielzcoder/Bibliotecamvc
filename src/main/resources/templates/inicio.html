@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="...">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Biblioteca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biblioteca | Início</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+    <style>
+        .home { 
+            max-width: 900px; margin: 3rem auto; padding: 2rem; 
+        }
+        .home-links { 
+            display: block; margin: 0; padding-left: 1.25rem; 
+        }
+        .home-links li { 
+            margin: 0.4rem 0; 
+        }
+        .home-links a { 
+            padding: 0; text-decoration: underline; 
+        }
+    </style>
 </head>
 <body>
-    <h1 th:text="'Sistema de Biblioteca'"></h1>
-    <p>Bem-vindo a biblioteca</p>
-    <nav>
-        <a th:ref="@{/livros}">
-            livros
-
-        </a>
+<main class="home">
+    <h1>Bem-vindo à Biblioteca</h1>
+    <p>Use os atalhos abaixo para acessar as páginas do sistema.</p>
+    <nav aria-label="Páginas da biblioteca">
+        <ul class="home-links">
+            <li><a th:href="@{/livros}">Livros</a></li>
+            <li><a th:href="@{/autores}">Autores</a></li>
+            <li><a th:href="@{/categorias}">Categorias</a></li>
+            <li><a th:href="@{/usuarios}">Usuários</a></li>
+            <li><a th:href="@{/emprestimos}">Empréstimos</a></li>
+        </ul>
     </nav>
-    <table>
-        <thead>
-            <tr>
-                <th> Título </th>
-                <th> Autor </th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr th:each="livro : ${livros}">
-            <td><span th:text="${livro.titulo}"> Title </span></td>
-            <td><span th:text="${livro.autor}"> Author </span></td>
-        </tr>
-        </tbody>
-    </table>
+</main>
 </body>
 </html>

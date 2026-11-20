@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="...">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h1 th:text="'Sistema de Biblioteca'"></h1>
+    <p>Bem-vindo a biblioteca</p>
+    <nav>
+        <a th:ref="@{/livros}">
+            livros
+
+        </a>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+                <th> Título </th>
+                <th> Autor </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="livro : ${livros}">
+            <td><span th:text="${livro.titulo}"> Title </span></td>
+            <td><span th:text="${livro.autor}"> Author </span></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
